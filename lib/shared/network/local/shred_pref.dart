@@ -12,9 +12,9 @@ static  late SharedPreferences sharedPreferences;
     required value,
   })async {
   
-  if(value is bool)  sharedPreferences.setBool(key, value);
-  if(value is String)  sharedPreferences.setString(key, value);
-  if(value is double)  sharedPreferences.setDouble(key, value);
+  if(value is bool) return await sharedPreferences.setBool(key, value);
+  if(value is String) return await sharedPreferences.setString(key, value);
+  if(value is double) return await sharedPreferences.setDouble(key, value);
   return await
   sharedPreferences.setInt(key, value);
   
